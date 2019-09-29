@@ -14,7 +14,7 @@ function IndexPage({ error, details }) {
 IndexPage.getInitialProps = async () => {
   try {
     const res = await fetch(
-      `${process.env.SERVER_URL}api/movie?title=The+Great+Gatsby`
+      `${process.env.SERVER_URL}api/movie/The Great Gatsby`
     )
     if (res.ok) {
       const { details } = await res.json()
