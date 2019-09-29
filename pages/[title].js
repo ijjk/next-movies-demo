@@ -2,7 +2,6 @@ import React from 'react'
 import fetch from 'isomorphic-unfetch'
 
 function IndexPage({ error, details }) {
-  console.log(details);
   return (
     <>
       {error ? <p>{error}</p> : (
