@@ -4,7 +4,7 @@ module.exports = {
   env: {
     SERVER_URL: isDev
       ? 'http://localhost:3000/'
-      : 'http://example.com/',
+      : 'http://localhost:3000/',
     OMDB_KEY: process.env.OMDB_KEY
   }
 }
