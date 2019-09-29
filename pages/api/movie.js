@@ -10,7 +10,7 @@ export default async (req, res) => {
     const apiRes = await fetch(`${apiEndpoint}&t=${title}`)
 
     if (apiRes.ok) {
-      return res.json({ status: 'ok', ...(await apiRes.json()) })
+      return res.json({ status: 'ok', details: await apiRes.json() })
     }
     throw new Error(`Request failed ${apiRes.status}`)
   } catch (err) {
