@@ -1,0 +1,7 @@
+{
+  "build": {
+    "env": {
+      "OMDB_KEY": "@omdb_key"
+    }
+  }
+}
