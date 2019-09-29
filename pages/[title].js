@@ -2,19 +2,24 @@ import React from 'react'
 import fetch from 'isomorphic-unfetch'
 
 function IndexPage({ error, details }) {
+  console.log(details);
   return (
     <>
       {error ? <p>{error}</p> : (
-        <p>{JSON.stringify(details)}</p>
+        <>
+          <img src={details.Poster} />
+          <h2>{details.Title} ({details.Year})</h2>
+        </>
       )}
+
     </>
   )
 }
 
-IndexPage.getInitialProps = async () => {
+IndexPage.getInitialProps = async ({ query }) => {
   try {
     const res = await fetch(
-      `${process.env.SERVER_URL}api/movie/The Great Gatsby`
+      `${process.env.SERVER_URL}api/movie/${query.title}`
     )
     if (res.ok) {
       const { details } = await res.json()
